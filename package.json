@@ -1,0 +1,15 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"pnpm --dir Portfolio/server dev\" \"pnpm --dir Portfolio/client dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

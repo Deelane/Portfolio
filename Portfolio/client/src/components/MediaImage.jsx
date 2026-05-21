@@ -1,0 +1,42 @@
+import { Paper, Box } from "@mui/material";
+
+export default function MediaImage({ src, alt = "image", align = "center" }) {
+    const justifyMap = {
+        left: "flex-start",
+        center: "center",
+        right: "flex-end",
+    };
+
+    return (
+        <Box
+            sx={{
+                display: "flex",
+                justifyContent: justifyMap[align] || "center",
+                width: "100%",
+                minWidth: 0,
+            }}
+        >
+            <Paper
+                elevation={0}
+                sx={{
+                    width: "100%",
+                    borderRadius: 3,
+                    overflow: "hidden",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "rgba(255,255,255,0.02)",
+                    display: "block",
+                }}
+            >
+                <img
+                    src={src}
+                    alt={alt}
+                    style={{
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                    }}
+                />
+            </Paper>
+        </Box>
+    );
+}

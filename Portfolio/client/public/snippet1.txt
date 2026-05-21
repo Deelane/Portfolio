@@ -1,0 +1,494 @@
+import {
+    AppBar,
+    Box,
+    Card,
+    CardContent,
+    Container,
+    Divider,
+    Grid,
+    Paper,
+    Toolbar,
+    Typography
+} from "@mui/material";
+
+const workSections = [
+    {
+        title: "Platform Engineering",
+        summary:
+            "Describe the overall project, its purpose, the systems involved, and the broader impact of the work.",
+        goals:
+            "Explain the technical goals, deadlines, performance targets, scalability requirements, or desired outcomes.",
+        constraints:
+            "Describe infrastructure limitations, production realities, staffing limitations, compatibility requirements, or other constraints.",
+        responsibilities:
+            "Outline your direct contributions, leadership responsibilities, implementation work, architecture decisions, or ownership areas.",
+        results:
+            "Summarize measurable outcomes, performance improvements, shipped features, business impact, or technical achievements.",
+    },
+    {
+        title: "Gameplay Systems",
+        summary:
+            "Provide an overview of the gameplay systems, networking challenges, player interactions, or engine-level work.",
+        goals:
+            "Describe performance targets, multiplayer synchronization objectives, responsiveness requirements, or iteration goals.",
+        constraints:
+            "Explain engine limitations, networking realities, production timelines, platform restrictions, or technical debt.",
+        responsibilities:
+            "Talk about the systems you designed, mechanics implemented, optimization efforts, debugging, or collaboration responsibilities.",
+        results:
+            "Describe gameplay improvements, performance gains, stability improvements, successful launches, or production outcomes.",
+    },
+    {
+        title: "Frontend & UX",
+        summary:
+            "Summarize the interfaces, tools, dashboards, workflows, or user-facing systems that were developed.",
+        goals:
+            "Explain usability requirements, accessibility targets, responsiveness goals, or maintainability expectations.",
+        constraints:
+            "Describe design limitations, legacy compatibility needs, stakeholder requirements, or delivery constraints.",
+        responsibilities:
+            "Describe your UI engineering work, design implementation, frontend architecture decisions, or tooling contributions.",
+        results:
+            "Highlight workflow improvements, usability gains, reduced maintenance costs, successful deployments, or stakeholder impact.",
+    },
+];
+
+const personalProjects = [
+    {
+        title: "Project Name",
+        description:
+            "Add a short summary about the project, technologies used, and notable achievements.",
+    },
+    {
+        title: "Another Project",
+        description:
+            "You can later replace these placeholders with real projects, screenshots, demos, or embeds.",
+    },
+];
+
+function MediaPlaceholder() {
+    return (
+        <Paper
+            elevation={0}
+            sx={{
+                height: "100%",
+                minHeight: 260,
+                borderRadius: 3,
+                border: "1px dashed rgba(255,255,255,0.18)",
+                background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "rgba(255,255,255,0.45)",
+                textAlign: "center",
+                p: 3,
+            }}
+        >
+            <Typography variant="body2">
+                Media Placeholder
+                <br />
+                image / code / embed
+            </Typography>
+        </Paper>
+    );
+}
+
+function WorkCard({
+    title,
+    summary,
+    goals,
+    constraints,
+    responsibilities,
+    results,
+}) {
+    return (
+        <Card
+            elevation={0}
+            sx={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: 4,
+                overflow: "hidden",
+                backdropFilter: "blur(12px)",
+            }}
+        >
+            <CardContent sx={{ p: { xs: 3, md: 4 } }}>
+                <Typography
+                    variant="h5"
+                    sx={{
+                        fontWeight: 700,
+                        mb: 3,
+                        letterSpacing: "0.02em",
+                    }}
+                >
+                    {title}
+                </Typography>
+
+                <Grid container spacing={3}>
+                    <Grid item xs={12} lg={6}>
+                        <Paper
+                            elevation={0}
+                            sx={{
+                                height: "100%",
+                                minHeight: 260,
+                                borderRadius: 3,
+                                background: "rgba(255,255,255,0.025)",
+                                border: "1px solid rgba(255,255,255,0.06)",
+                                p: 3,
+                            }}
+                        >
+                            <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+                                <Paper
+                                    elevation={0}
+                                    sx={{
+                                        borderRadius: 3,
+                                        background: "rgba(255,255,255,0.025)",
+                                        border:
+                                            "1px solid rgba(255,255,255,0.06)",
+                                        p: 3,
+                                    }}
+                                >
+                                    <Typography
+                                        variant="overline"
+                                        sx={{
+                                            color: "rgba(255,255,255,0.5)",
+                                            letterSpacing: "0.12em",
+                                        }}
+                                    >
+                                        PROJECT SUMMARY
+                                    </Typography>
+
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            mt: 1,
+                                            lineHeight: 1.8,
+                                            color: "rgba(255,255,255,0.82)",
+                                        }}
+                                    >
+                                        {summary}
+                                    </Typography>
+                                </Paper>
+
+                                <Box
+                                    sx={{
+                                        display: "flex",
+                                        gap: 3,
+                                        flexDirection: {
+                                            xs: "column",
+                                            md: "row",
+                                        },
+                                    }}
+                                >
+                                    <Paper
+                                        elevation={0}
+                                        sx={{
+                                            flex: 1,
+                                            borderRadius: 3,
+                                            background:
+                                                "rgba(255,255,255,0.025)",
+                                            border:
+                                                "1px solid rgba(255,255,255,0.06)",
+                                            p: 3,
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="overline"
+                                            sx={{
+                                                color:
+                                                    "rgba(255,255,255,0.5)",
+                                                letterSpacing: "0.12em",
+                                            }}
+                                        >
+                                            GOALS
+                                        </Typography>
+
+                                        <Typography
+                                            variant="body1"
+                                            sx={{
+                                                mt: 1,
+                                                lineHeight: 1.8,
+                                                color:
+                                                    "rgba(255,255,255,0.82)",
+                                            }}
+                                        >
+                                            {goals}
+                                        </Typography>
+                                    </Paper>
+
+                                    <Paper
+                                        elevation={0}
+                                        sx={{
+                                            flex: 1,
+                                            borderRadius: 3,
+                                            background:
+                                                "rgba(255,255,255,0.025)",
+                                            border:
+                                                "1px solid rgba(255,255,255,0.06)",
+                                            p: 3,
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="overline"
+                                            sx={{
+                                                color:
+                                                    "rgba(255,255,255,0.5)",
+                                                letterSpacing: "0.12em",
+                                            }}
+                                        >
+                                            CONSTRAINTS
+                                        </Typography>
+
+                                        <Typography
+                                            variant="body1"
+                                            sx={{
+                                                mt: 1,
+                                                lineHeight: 1.8,
+                                                color:
+                                                    "rgba(255,255,255,0.82)",
+                                            }}
+                                        >
+                                            {constraints}
+                                        </Typography>
+                                    </Paper>
+                                </Box>
+
+                                <Paper
+                                    elevation={0}
+                                    sx={{
+                                        borderRadius: 3,
+                                        background: "rgba(255,255,255,0.025)",
+                                        border:
+                                            "1px solid rgba(255,255,255,0.06)",
+                                        p: 3,
+                                    }}
+                                >
+                                    <Typography
+                                        variant="overline"
+                                        sx={{
+                                            color: "rgba(255,255,255,0.5)",
+                                            letterSpacing: "0.12em",
+                                        }}
+                                    >
+                                        MY RESPONSIBILITIES
+                                    </Typography>
+
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            mt: 1,
+                                            lineHeight: 1.8,
+                                            color: "rgba(255,255,255,0.82)",
+                                        }}
+                                    >
+                                        {responsibilities}
+                                    </Typography>
+                                </Paper>
+
+                                <Paper
+                                    elevation={0}
+                                    sx={{
+                                        borderRadius: 3,
+                                        background: "rgba(255,255,255,0.025)",
+                                        border:
+                                            "1px solid rgba(255,255,255,0.06)",
+                                        p: 3,
+                                    }}
+                                >
+                                    <Typography
+                                        variant="overline"
+                                        sx={{
+                                            color: "rgba(255,255,255,0.5)",
+                                            letterSpacing: "0.12em",
+                                        }}
+                                    >
+                                        RESULTS
+                                    </Typography>
+
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            mt: 1,
+                                            lineHeight: 1.8,
+                                            color: "rgba(255,255,255,0.82)",
+                                        }}
+                                    >
+                                        {results}
+                                    </Typography>
+                                </Paper>
+                            </Box>
+                        </Paper>
+                    </Grid>
+
+                    <Grid item xs={12} lg={6}>
+                        <MediaPlaceholder />
+                    </Grid>
+                </Grid>
+            </CardContent>
+        </Card>
+    );
+}
+
+export default function App() {
+    return (
+        <Box
+            sx={{
+                minHeight: "100vh",
+                background:
+                    "radial-gradient(circle at top, #1f2937 0%, #0f172a 35%, #020617 100%)",
+                color: "white",
+            }}
+        >
+            <AppBar
+                position="sticky"
+                elevation={0}
+                sx={{
+                    background: "rgba(2,6,23,0.7)",
+                    backdropFilter: "blur(16px)",
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                }}
+            >
+                <Toolbar sx={{ justifyContent: "space-between" }}>
+                    <Typography
+                        variant="h6"
+                        sx={{ fontWeight: 700, letterSpacing: "0.08em" }}
+                    >
+                        PORTFOLIO
+                    </Typography>
+
+                    <Box sx={{ display: "flex", gap: 4 }}>
+                        <Typography variant="body2">Work Experience</Typography>
+                        <Typography variant="body2">Personal Projects</Typography>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+
+            <Container maxWidth="xl" sx={{ py: { xs: 8, md: 12 } }}>
+                <Box sx={{ mb: 14 }}>
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            fontWeight: 800,
+                            mb: 2,
+                            letterSpacing: "-0.03em",
+                        }}
+                    >
+                        Work Experience
+                    </Typography>
+
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            color: "rgba(255,255,255,0.65)",
+                            maxWidth: 900,
+                            lineHeight: 1.7,
+                            fontWeight: 400,
+                        }}
+                    >
+                        Professional experience, technical leadership, systems
+                        design, collaboration, and shipped products.
+                    </Typography>
+
+                    <Divider
+                        sx={{
+                            mt: 5,
+                            borderColor: "rgba(255,255,255,0.08)",
+                        }}
+                    />
+                </Box>
+
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 5,
+                        mb: 18,
+                    }}
+                >
+                    {workSections.map((section) => (
+                        <WorkCard
+                            key={section.title}
+                            title={section.title}
+                            summary={section.summary}
+                            goals={section.goals}
+                            constraints={section.constraints}
+                            responsibilities={section.responsibilities}
+                            results={section.results}
+                        />
+                    ))}
+                </Box>
+
+                <Box sx={{ mb: 10 }}>
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            fontWeight: 800,
+                            mb: 2,
+                            letterSpacing: "-0.03em",
+                        }}
+                    >
+                        Personal Projects
+                    </Typography>
+
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            color: "rgba(255,255,255,0.65)",
+                            maxWidth: 900,
+                            lineHeight: 1.7,
+                            fontWeight: 400,
+                        }}
+                    >
+                        Independent work, experiments, prototypes, open-source
+                        projects, and technical explorations.
+                    </Typography>
+
+                    <Divider
+                        sx={{
+                            mt: 5,
+                            borderColor: "rgba(255,255,255,0.08)",
+                        }}
+                    />
+                </Box>
+
+                <Grid container spacing={4}>
+                    {personalProjects.map((project) => (
+                        <Grid item xs={12} md={6} key={project.title}>
+                            <Card
+                                elevation={0}
+                                sx={{
+                                    height: "100%",
+                                    background: "rgba(255,255,255,0.03)",
+                                    border:
+                                        "1px solid rgba(255,255,255,0.08)",
+                                    borderRadius: 4,
+                                    backdropFilter: "blur(12px)",
+                                }}
+                            >
+                                <CardContent sx={{ p: 4 }}>
+                                    <Typography
+                                        variant="h5"
+                                        sx={{ fontWeight: 700, mb: 2 }}
+                                    >
+                                        {project.title}
+                                    </Typography>
+
+                                    <Typography
+                                        variant="body1"
+                                        sx={{
+                                            color: "rgba(255,255,255,0.75)",
+                                            lineHeight: 1.8,
+                                        }}
+                                    >
+                                        {project.description}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+        </Box>
+    );
+}
