@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"pnpm --dir Portfolio/server dev\" \"pnpm --dir Portfolio/client dev\""
+    "dev": "concurrently \"pnpm --dir Portfolio/server dev\" \"pnpm --dir Portfolio/client dev\"",
+    "deploy:client": "pnpm --filter portfolio-client build && pnpm --filter portfolio-client exec gh-pages -d dist"
   },
   "devDependencies": {
     "concurrently": "^9.0.1"

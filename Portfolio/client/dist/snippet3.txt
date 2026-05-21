@@ -1,0 +1,37 @@
+    //Called by client, tells server to spawn a hook and give it velocity
+    [ServerRpc]
+    private void RequestServerThrow(Vector3 origin, Vector3 direction, Vector3 linearVelocity, string grappleId, RPCInfo info = default)
+    {
+        EquipmentModel equipmentModel = GetComponent<EquipmentModel>();
+        int selected = equipmentModel.selectedItem.value;
+        if (selected == -1) return;
+
+        GrappleHookUse clientGrappleInstance = equipmentModel.equipmentSlots[selected].item.useBehavior as GrappleHookUse;
+        if (clientGrappleInstance == null) return;
+        _grappleInstance = clientGrappleInstance; //set server's copy of client's grapple instance
+
+        Vector3 spawnPos = origin + direction * 2.5f;
+
+        // Spawn hook projectile on server
+        var hook = Instantiate(_grappleInstance.hookPrefab, spawnPos, Quaternion.LookRotation(-direction));
+
+        hook.ServerInitialize(
+            controller: this,
+            grappleInstanceId: grappleId,
+            origin: spawnPos,
+            linearVelocity: linearVelocity,
+            thrower: info.sender,
+            basePlayerController: IsTopRider() ? mountController.GetBottom().grappleHookController : null
+        );
+
+        //Extra check in case previous recall didn't finish destroying hook before new one spawns
+        if (currentHook != null)
+        {
+            Destroy(currentHook.gameObject);
+            currentHook = null;
+        }
+
+        currentHook = hook;
+        //Tell connected clients to visualize rope of thrower
+        SetHookAttach(currentHook, this);
+    }
