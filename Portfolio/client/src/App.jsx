@@ -28,6 +28,63 @@ const workSections = [
             "I was responsible for maintaining, updating, and debugging airlow/dataflow pipelines, maintaining our internal API responsible for utility such as DAG related actions, and maintaining the dashboard used by the operations team to Q/A the data we produced.",
         results:
             "By the time I was rotated off the team, we finished migrating one of the sales insights, all of the market insights datasets to new pipelines. This eliminated key manual steps requiring Operations input and reduced time required to produce market insights datasets from days to hours.",
+        tools: [
+            {
+                src: "airflow.png",
+                title: "Airflow",
+                description: "Directed Acyclic Graphs for Orchestration",
+            },
+            {
+                src: "cloudcomposer.png",
+                title: "Cloud Composer",
+                description: "Hosts Airflow",
+            },
+            {
+                src: "cloudstorage.png",
+                title: "Cloud Storage",
+                description: "Store Parquets and other data",
+            },
+            {
+                src: "react.png",
+                title: "React",
+                description: "Dashboard",
+            },
+            {
+                src: "typescript.png",
+                title: "Typescript",
+                description: "Dashboard",
+            },
+            {
+                src: "apachebeam.png",
+                title: "Apache Beam",
+                description: "ETL, Normalization",
+            },
+            {
+                src: "cloudrepositories.png",
+                title: "Cloud Repositories",
+                description: "Code Repositories",
+            },
+            {
+                src: "bitbucket.png",
+                title: "BitBucket",
+                description: "Code Repositories",
+            },
+            {
+                src: "concourse.png",
+                title: "Concourse, CircleCI",
+                description: "CI/CD",
+            },
+            {
+                src: "circleci.png",
+                title: "CircleCI",
+                description: "CI/CD",
+            },
+            {
+                src: "flask.png",
+                title: "Flask",
+                description: "API",
+            },
+        ]
     },
     {
         title: "Master Data Management",
@@ -41,6 +98,53 @@ const workSections = [
             "I had to essentially perform 4 roles. On top of implementing the API and dashboard, I had to work with the product manager to decide on the graphic design of the dashboard, determine the short and long-term goals of the project, and write my own tickets. I also had to simultaneously continue development of the database and migrations, infrastructure, and CI/CD. ",
         results:
             "Despite the lack of resources, we managed to achieve minimum viable product ahead of schedule and I was able to move teams shortly after. I remained the primary point of contact for context on all API/dashboard related questions on the project.",
+        tools: [
+            {
+                src: "graphql.png",
+                title: "GraphQL",
+                description: "Database reads/mutations, serving data to dashboard",
+            },
+            {
+                src: "postgres.png",
+                title: "PostgreSQL",
+                description: "Database",
+            },
+            {
+                src: "flyway.png",
+                title: "Flyway",
+                description: "Database migrations",
+            },
+            {
+                src: "react.png",
+                title: "React",
+                description: "Dashboard",
+            },
+            {
+                src: "typescript.png",
+                title: "Typescript",
+                description: "Dashboard",
+            },
+            {
+                src: "terraform.png",
+                title: "Terraform",
+                description: "Infrastructure automation",
+            },
+            {
+                src: "bitbucket.png",
+                title: "BitBucket",
+                description: "Code Repositories",
+            },
+            {
+                src: "circleci.png",
+                title: "CircleCI",
+                description: "CI/CD",
+            },
+            {
+                src: "redux.png",
+                title: "Redux",
+                description: "Frontend data session persistence",
+            },
+        ]
     },
     {
         title: "Product Locators",
@@ -54,6 +158,73 @@ const workSections = [
             "The majority of my time was spent on maintenance and the primary migration, while partially assisting with the analytics fix and CI/CD migration to CircleCi that was also occurring at the same time.",
         results:
             "I successfully implemented many new features while migrating many from legacy to new. However, the lack of resources and unforeseen analytics issues that arose led to the migration remaining incomplete by the time I was gone. After the fact, I realized that I should have been more vocal about some of the ideas I had to fix analytics, and may have been able to create a solution that allowed us to shift focus as a team back to the migration.",
+        tools: [
+            {
+                src: "gtm.png",
+                title: "Google Tag Manager",
+                description: "Defining and triggering user events for analytics",
+            },
+            {
+                src: "ga4.png",
+                title: "Google Analytics",
+                description: "Routing user event data for analytics",
+            },
+            {
+                src: "graphql.png",
+                title: "GraphQL",
+                description: "Displaying product data",
+            },
+            {
+                src: "react.png",
+                title: "React",
+                description: "Dashboard",
+            },
+            {
+                src: "typescript.png",
+                title: "Typescript",
+                description: "Dashboard",
+            },
+            {
+                src: "aws.png",
+                title: "Cloud Storage",
+                description: "Storing user settings and scripts for locators",
+            },
+            {
+                src: "serverless.png",
+                title: "Serverless",
+                description: "CRUD functionality for locators dashboard",
+            },
+            {
+                src: "timestream.png",
+                title: "Timestream",
+                description: "Storing analytics events",
+            },
+            {
+                src: "codecommit.png",
+                title: "CodeCommit",
+                description: "Code Repositories",
+            },
+            {
+                src: "bitbucket.png",
+                title: "BitBucket",
+                description: "Code Repositories",
+            },
+            {
+                src: "codebuild.png",
+                title: "CodeBuild",
+                description: "CI/CD",
+            },
+            {
+                src: "circleci.png",
+                title: "CircleCi",
+                description: "CI/CD",
+            },
+            {
+                src: "python.png",
+                title: "Python",
+                description: "Analytics ETL",
+            },
+        ]
     },
 ];
 
@@ -69,34 +240,6 @@ const personalProjects = [
             "You can later replace these placeholders with real projects, screenshots, demos, or embeds.",
     },
 ];
-
-function MediaPlaceholder() {
-    return (
-        <Paper
-            elevation={0}
-            sx={{
-                height: "100%",
-                minHeight: 260,
-                borderRadius: 3,
-                border: "1px dashed rgba(255,255,255,0.18)",
-                background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "rgba(255,255,255,0.45)",
-                textAlign: "center",
-                p: 3,
-            }}
-        >
-            <Typography variant="body2">
-                Media Placeholder
-                <br />
-                image / code / embed
-            </Typography>
-        </Paper>
-    );
-}
 
 function WorkCard({
     title,
@@ -116,7 +259,6 @@ function WorkCard({
                 variant="h4"
                 sx={{
                     fontWeight: 800,
-                    mb: 1,
                     letterSpacing: "-0.03em",
                     mb: 2
                 }}
@@ -313,7 +455,6 @@ function WorkCard({
                         </Box>
                     </Paper>
                 </Grid>
-                <Box sx={{ width: "90%", display: "flex", margin: "auto" }} ><MediaImage src={imgSource} /></Box>
             </Grid>
         </Box>
     );
@@ -355,7 +496,7 @@ export default function App() {
                         variant="h6"
                         sx={{ fontWeight: 700, letterSpacing: "0.08em" }}
                     >
-                        Delaney N.
+                        Delaney Nikoofekr
                     </Typography>
 
                     <Box
@@ -418,7 +559,7 @@ export default function App() {
                         </Box>
                         <Box
                             component="a"
-                            href="">
+                            href="https://github.com/Deelane/Portfolio/tree/master/Portfolio">
                             <Typography variant="body2">View Repository</Typography>
                         </Box>
                     </Box>
@@ -464,7 +605,7 @@ export default function App() {
                             fontWeight: 700,
                         }}
                     >
-                        SOFTWARE ENGINEER
+                        FULL STACK SOFTWARE ENGINEER
                     </Typography>
 
                     <Typography
@@ -508,7 +649,7 @@ export default function App() {
                                 textAlign: "center"
                             }}
                         >
-                            I'll be completely honest... I used AI to generate the majority of this page, and that's okay.
+                            How I used AI to efficiently develop this page:
                         </Typography>
                     </Stack>
                     <Box
@@ -539,7 +680,7 @@ export default function App() {
                                     fontWeight: 800,
                                 }}
                             >
-                                Yep, here's the prompt:
+                                Initial prompt:
                             </Typography>
 
                             <Box
@@ -569,7 +710,7 @@ export default function App() {
                                     fontWeight: 800,
                                 }}
                             >
-                                And here is the initial code:
+                                Initial code:
                             </Typography>
 
                             <Box
@@ -599,7 +740,7 @@ export default function App() {
                                 textAlign: "center"
                             }}
                         >
-                            Frustratingly simple.
+                            AI helped me achieve a prototype at blazingly fast speeds.
                         </Typography>
 
                         <Typography
@@ -612,20 +753,7 @@ export default function App() {
                                 textAlign: "center"
                             }}
                         >
-                            It took all of 3 minutes to get a new project going, even perfectly implementing a new technology I have never worked with.
-                        </Typography>
-
-                        <Typography
-                            variant="h4"
-                            sx={{
-                                color: "rgba(255,255,255)",
-                                maxWidth: 900,
-                                lineHeight: 1.7,
-                                fontWeight: 800,
-                                textAlign: "center"
-                            }}
-                        >
-                            Here are my thoughts on AI in software development.
+                            While it is a controversial topic, here are my thoughts on AI in software development.
                         </Typography>
 
                     </Stack>
@@ -1170,7 +1298,6 @@ export default function App() {
                                     >
                                         Product Locators
                                     </Typography>
-
                                     <MediaImage src="/Work3.png" />
                                 </Box>
                             </Box>
@@ -1190,21 +1317,236 @@ export default function App() {
                         const sectionId = section.title
                             .toLowerCase()
                             .replace(/\s+/g, "-");
+
                         return (
-                            <WorkCard
+                            <Box
                                 key={sectionId}
-                                title={section.title}
-                                summary={section.summary}
-                                goals={section.goals}
-                                constraints={section.constraints}
-                                responsibilities={section.responsibilities}
-                                results={section.results}
-                                component="a"
-                                href={`#${sectionId}`}
-                                imgSource={`Tools${index + 1}.PNG`}
-                            />
-                        )
+                                sx={{
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    width: "100%",
+                                    gap: 3,
+                                    mb: 6,
+                                }}
+                            >
+                                <Box sx={{ flex: 1, display: "flex" }}>
+                                    <WorkCard
+                                        title={section.title}
+                                        summary={section.summary}
+                                        goals={section.goals}
+                                        constraints={section.constraints}
+                                        responsibilities={section.responsibilities}
+                                        results={section.results}
+                                        component="a"
+                                        href={`#${sectionId}`}
+                                    />
+                                </Box>
+                                <Box
+                                    sx={{
+                                        flex: 1,
+                                        border: "1px solid rgba(148,163,184,0.2)",
+                                        borderRadius: 3,
+                                        padding: 3,
+                                        display: "grid",
+                                        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                                        gap: 3,
+                                        alignContent: "start",
+                                        mt: 7.5
+                                    }}
+                                >
+                                    {section.tools.map((tool) => (
+                                        <Box
+                                            key={tool.title}
+                                            sx={{
+                                                border: "1px solid rgba(148,163,184,0.15)",
+                                                borderRadius: 3,
+                                                padding: 2,
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                gap: 2,
+                                                backgroundColor: "rgba(15,23,42,0.25)",
+                                            }}
+                                        >
+                                            <Box
+                                                sx={{
+                                                    width: "100%",
+                                                    height: 140,
+                                                    display: "flex",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    overflow: "hidden",
+                                                    borderRadius: 2,
+                                                }}
+                                            >
+                                                <MediaImage
+                                                    src={tool.src}
+                                                    sx={{
+                                                        width: "100%",
+                                                        height: "100%",
+                                                    }}
+                                                    imgSx={{
+                                                        width: "100%",
+                                                        height: "100%",
+                                                        objectFit: "contain",
+                                                    }}
+                                                />
+                                            </Box>
+                                            <Typography
+                                                variant="h6"
+                                                sx={{
+                                                    fontWeight: 600,
+                                                    lineHeight: 1.2,
+                                                    textAlign: "center",
+                                                }}
+                                            >
+                                                {tool.title}
+                                            </Typography>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{
+                                                    color: "rgba(226,232,240,0.7)",
+                                                    lineHeight: 1.5,
+                                                    textAlign: "center",
+                                                }}
+                                            >
+                                                {tool.description}
+                                            </Typography>
+                                        </Box>
+                                    ))}
+                                </Box>
+                            </Box>
+                        );
                     })}
+                    <Box
+                        sx={{
+                            width: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 4,
+                        }}
+                    >
+                        <Typography
+                            variant="h3"
+                            sx={{
+                                color: "rgba(255,255,255,0.9)",
+                                textAlign: "center",
+                                fontWeight: 800,
+                                mb: 5
+                            }}
+                        >
+                            Locator Examples
+                        </Typography>
+                        {
+                            <Box
+                                sx={{
+                                    width: "100%",
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    gap: 6,
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    height: 260,
+                                }}
+                            >
+                                {[
+                                    { href: "https://contact.pepsico.com/pepsi/product-locator", src: "/locator1.svg" },
+                                    { href: "https://www.chobani.com/wheretobuy", src: "/locator2.svg" },
+                                    { href: "https://applegate.com/locator", src: "/locator3.png" },
+                                ].map((item) => (
+                                    <Box
+                                        key={item.href}
+                                        component="a"
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        sx={{
+                                            flex: 1,
+                                            height: "100%",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            borderRadius: 5,
+                                            padding: 3,
+                                            border: "1px solid rgba(148,163,184,0.2)",
+                                            textDecoration: "none",
+                                            transition: "all 0.2s ease",
+                                            "&:hover": {
+                                                backgroundColor: "rgba(148,163,184,0.08)",
+                                                transform: "translateY(-2px)",
+                                            },
+                                        }}
+                                    >
+                                        <Box
+                                            sx={{
+                                                width: 200,
+                                                height: 200,
+                                                display: "flex",
+                                                justifyContent: "center",
+                                                alignItems: "center",
+                                            }}
+                                        >
+                                            <MediaImage
+                                                src={item.src}
+                                                style={{
+                                                    maxWidth: "100%",
+                                                    maxHeight: "100%",
+                                                    objectFit: "contain",
+                                                }}
+                                            />
+                                        </Box>
+                                    </Box>
+                                ))}
+                            </Box>
+
+
+                        }
+                    </Box>
+                </Box>
+                <Box
+                    component="footer"
+                    sx={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        paddingY: 3,
+                        marginTop: 8,
+                        borderTop: "1px solid rgba(148,163,184,0.15)",
+                    }}
+                >
+                    <Box
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 4,
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: 1,
+                                color: "rgba(255,255,255,0.7)",
+                            }}
+                        >
+                            <Typography variant="body2">© 2026</Typography>
+                            <Typography variant="body2">Delaney Nikoofekr</Typography>
+                        </Box>
+
+                        <Box
+                            component="a"
+                            href="https://github.com/Deelane/Portfolio#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            sx={{
+                                color: "rgba(255,255,255,0.7)",
+                                textDecoration: "none",
+                                "&:hover": { opacity: 0.8 },
+                            }}
+                        >
+                            <Typography variant="body2">View Repository</Typography>
+                        </Box>
+                    </Box>
                 </Box>
             </Container>
         </Box>
