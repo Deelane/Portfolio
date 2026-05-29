@@ -62,19 +62,6 @@ export default function CodeSnippet({
     return (
         <Box className={`codeWrap codeAlign-${align}`}>
             <Paper elevation={0} className="codeSnippet">
-                {/* Header */}
-                <Box className="codeHeader">
-                    <Typography className="codeLang">
-                        {resolvedLanguage}
-                    </Typography>
-
-                    <Box className="codeDots">
-                        <span className="dot red" />
-                        <span className="dot yellow" />
-                        <span className="dot green" />
-                    </Box>
-                </Box>
-
                 {/* Code */}
                 <Box className="codeBody">
                     <pre className={`language-${resolvedLanguage}`} style={{

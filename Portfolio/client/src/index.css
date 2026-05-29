@@ -7,22 +7,27 @@ pre[class*="language-"] {
     margin: 0;
 }
 
-/* keep your spacing consistent */
 .codeBody pre {
     margin: 0;
-    padding: 16px;
-    flex: 1;
+    padding: 20px;
+
     overflow: auto;
+    max-width: 100%;
 
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 12px;
+    line-height: 1.55;
 
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    font-family:
+        "JetBrains Mono",
+        ui-monospace,
+        SFMono-Regular,
+        Consolas,
         monospace;
 
-    color: rgba(255, 255, 255, 0.88);
+    background: transparent !important;
 
-    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 * {
@@ -77,20 +82,14 @@ a {
     width: 100%;
     max-width: 100%;
 
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
 
-    border: 1px solid rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(148,163,184,0.12);
 
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.04),
-        rgba(255, 255, 255, 0.02)
-    );
+    background: rgba(15,23,42,0.92);
 
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-
-    backdrop-filter: blur(14px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 
 /* =========================
@@ -102,18 +101,16 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    padding: 8px 12px;
+    padding: 10px 14px;
 
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(30,41,59,0.9);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(148,163,184,0.12);
 }
 
 .codeLang {
-    font-size: 12px !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: #60a5fa !important;
+    font-weight: 700 !important;
 }
 
 /* =========================
@@ -144,29 +141,6 @@ a {
     background: #27c93f;
 }
 
-/* =========================
-   CODE BODY
-========================= */
-
 .codeBody {
-    margin: 0;
-    padding: 16px;
-
-    overflow-x: auto;
-
-    font-size: 13px;
-    line-height: 1.6;
-
-    color: rgba(255, 255, 255, 0.88);
-
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        monospace;
-
-    background: radial-gradient(
-        circle at top,
-        rgba(255, 255, 255, 0.02),
-        transparent 70%
-    );
-
-    white-space: pre;
+    overflow: hidden;
 }
